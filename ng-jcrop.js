@@ -34,7 +34,7 @@
         '    <div class="ng-jcrop-image-wrapper">' +
         '        <img class="ng-jcrop-image" />' +
         '   </div>' +
-        '   <div class="ng-jcrop-thumbnail-wrapper" ng-style="previewImgStyle">' +
+        '   <div ng-show="thumbnail" class="ng-jcrop-thumbnail-wrapper" ng-style="previewImgStyle">' +
         '       <img class="ng-jcrop-thumbnail" />' +
         '   </div>' +
         '</div>'

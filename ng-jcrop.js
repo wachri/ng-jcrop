@@ -211,7 +211,7 @@
          * get the current shrink ratio
          */
         $scope.getShrinkRatio = function(){
-            var img = $('<img>').attr('src', $scope.mainImg[0].src)[0];
+            var img = angular.element('<img>').attr('src', $scope.mainImg[0].src)[0];
 
             if(ngJcropConfig.jcrop.maxWidth > img.width || ngJcropConfig.jcrop.maxHeight > img.height){
                 return 1;
@@ -290,7 +290,7 @@
          */
         $scope.onMainImageLoad = function(){
             $scope.mainImg.off('load', $scope.onMainImageLoad);
-            $scope.updateCurrentSizes($('<img>').attr('src', $scope.mainImg[0].src)[0]);
+            $scope.updateCurrentSizes(angular.element('<img>').attr('src', $scope.mainImg[0].src)[0]);
 
             var config = angular.extend({
                 onChange: $scope.showPreview,
@@ -320,7 +320,7 @@
          * @init main image
          */
         $scope.initMainImage = function(src){
-            $scope.mainImg = $('<img>').addClass('ng-jcrop-image');
+            $scope.mainImg = angular.element('<img>').addClass('ng-jcrop-image');
             $scope.mainImg.on('load', $scope.onMainImageLoad);
             $scope.mainImg.css({ maxWidth: ngJcropConfig.jcrop.maxWidth, maxHeight: ngJcropConfig.jcrop.maxHeight });
             $scope.mainImg.attr('src', src);

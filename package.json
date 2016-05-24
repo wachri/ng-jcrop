@@ -1,6 +1,6 @@
 {
   "name": "ng-jcrop",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "ng-jcrop",
   "main": "ng-jcrop.js",
   "dependencies": {},
@@ -19,8 +19,8 @@
   },
   "scripts": {
     "postinstall": "bower install",
-    "test": "./node_modules/karma/bin/karma start",
-    "citest": "./node_modules/karma/bin/karma start karma.travis.conf.js",
+    "test": "karma start",
+    "citest": "karma start karma.travis.conf.js",
     "serve": "http-server"
   },
   "repository": {

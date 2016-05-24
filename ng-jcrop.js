@@ -22,6 +22,7 @@
         widthLimit: 1000,
         heightLimit: 1000,
         previewImgStyle: {'width': '100px', 'height': '100px', 'overflow': 'hidden', 'margin-left': '5px'},
+        useSelectionFallback: false, // use widthLimit and heightLimit if selection could not be updated after src change
         jcrop: {
             aspectRatio: 1,
             maxWidth: 300,
@@ -303,6 +304,18 @@
             }, ngJcropConfig.jcrop);
 
             if( $scope.selection && $scope.selection.length === 6 ){
+                config.setSelect = $scope.selection;
+            } else if( config.useSelectionFallback ){
+                // in some cases, after src change, the selection get lost
+                $scope.setSelection({
+                    x: 0,
+                    y: 0,
+                    x2: ngJcropConfig.widthLimit,
+                    y2: ngJcropConfig.heightLimit,
+                    w: ngJcropConfig.widthLimit,
+                    h: ngJcropConfig.heightLimit
+                });
+
                 config.setSelect = $scope.selection;
             }
 

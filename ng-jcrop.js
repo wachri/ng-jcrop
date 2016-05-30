@@ -317,6 +317,7 @@
                 });
 
                 config.setSelect = $scope.selection;
+                $scope.$apply();
             }
 
             $scope.jcrop = jQuery.Jcrop($scope.mainImg[0], config);
